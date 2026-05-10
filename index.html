@@ -94,6 +94,30 @@
     display: block;
   }
 
+  .hero-tagline {
+    font-size: 1.05rem;
+    margin-top: 10px;
+    color: #eef2ff;
+    opacity: 0.95;
+  }
+
+  .hero-features {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-features .pill {
+    background: rgba(255,255,255,0.08);
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    color: #e6f6ff;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+
   .hero-title {
     text-align: center;
     font-size: 1.8rem;
@@ -126,6 +150,15 @@
     width: 100%;
     border-radius: 16px;
     border: 1px solid #1f2937;
+  }
+
+  figure { margin: 0; }
+
+  .figcaption {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    margin-top: 8px;
+    text-align: center;
   }
 
   @media (max-width: 768px) {
@@ -211,11 +244,18 @@
 <body>
 
 <header>
-  <h1>あなたの旅が、日本の形を変えていく</h1>
+  <h1>旅はしたいけど、行き先を考えるのは面倒なあなたへ</h1>
 
-  <p>
-    旅先を選ぶのではなく、あなたの行動の積み重ねが“次の旅先”を決めていく。
+  <p class="hero-tagline">
+    あなたの旅の記録が“あなたらしい日本の形”をつくる。類似度で近いユーザーの満足度が高い目的地を提示し、
+    行動範囲や想定外の場所との出会いを生みます。
   </p>
+
+  <div class="hero-features">
+    <span class="pill">マンネリを打破</span>
+    <span class="pill">心理的距離でレコメンド</span>
+    <span class="pill">個人の行動地図を可視化</span>
+  </div>
 
   <a class="btn" href="https://travel-app-kappa-weld.vercel.app" target="_blank">
     アプリを体験する
@@ -231,18 +271,16 @@
   <h2>いま日本で起きていること</h2>
 
   <p>
-    旅行先は自由に選べるはずなのに、
-    実際には多くの人が「行きやすい場所」や「有名な場所」に集中している。
+    行き先は選べるはずなのに、実際には行きやすさや有名さに偏ってしまいがち。
   </p>
 
   <p>
-    その結果、日本全体の移動は偏り、
-    地方の魅力は“知られないままの場所”として残り続けている。
+    地方の魅力が知られないまま残り、移動や経済活動の“偏り”が生まれています。
   </p>
 
   <div class="card">
-    このアプリが扱うのは距離ではなく  
-    <span class="highlight">「行こうと思えるかどうか」</span>という心理的な壁。
+    このアプリが注目するのは物理的距離ではなく
+    <span class="highlight">“心理的距離”</span>です — 行こうと思えるかどうかを動かす体験に着目します。
   </div>
 </section>
 
@@ -252,18 +290,18 @@
   <div class="grid">
 
     <div class="card">
-      <h3>旅が記録になる</h3>
-      <p>行った場所と満足度から、あなた専用の日本地図が生成される。</p>
+      <h3>旅があなた専用の地図に</h3>
+      <p>行った場所と満足度から、あなたの行動の“形”を可視化します。自分の行動範囲に愛着が生まれます。</p>
     </div>
 
     <div class="card">
-      <h3>距離の感覚が変わる</h3>
-      <p>満足した場所は心理的に近くなり、行動範囲が広がる。</p>
+      <h3>マンネリを打破する推薦</h3>
+      <p>AIで過度にパーソナライズするのではなく、類似度が高いユーザーの高満足度スポットを提案します。</p>
     </div>
 
     <div class="card">
-      <h3>人の履歴がヒントになる</h3>
-      <p>似た行動をしたユーザーの旅先が次の候補になる。</p>
+      <h3>旅のハードルを下げる</h3>
+      <p>行程を考えなくても、類似ユーザーの実際の記録から旅先を見つけられます。</p>
     </div>
 
   </div>
@@ -302,9 +340,20 @@
   <h2>実際のアプリ画面</h2>
 
   <div class="screens">
-    <img src="image1.jpg" alt="screen1"/>
-    <img src="image2.jpg" alt="screen2"/>
-    <img src="image3.jpg" alt="screen3"/>
+    <figure>
+      <img src="image1.jpg" alt="screen1"/>
+      <figcaption class="figcaption">旅の記録画面 — 行先と満足度を直感的に記録</figcaption>
+    </figure>
+
+    <figure>
+      <img src="image2.jpg" alt="screen2"/>
+      <figcaption class="figcaption">パーソナルマップ — あなたの行動の“形”を色で表示</figcaption>
+    </figure>
+
+    <figure>
+      <img src="image3.jpg" alt="screen3"/>
+      <figcaption class="figcaption">おすすめ候補 — 類似ユーザーの高満足地を提案</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -345,6 +394,35 @@
       <p>円ではなく「行動そのものの形」で日本を表現。</p>
     </div>
 
+  </div>
+</section>
+
+<section>
+  <h2>ロードマップ（展望）</h2>
+
+  <div class="card">
+    <h3>カテゴリラベリングによる類似度の拡張</h3>
+    <p>食べ歩き・レジャー・聖地巡礼・ライブなどのカテゴリを付与して、好みに応じた類似度設定を可能にします。</p>
+  </div>
+
+  <div class="card">
+    <h3>行動範囲の高次元可視化</h3>
+    <p>行動範囲を色で着色し、あなた専用の行動の形を多次元的に表示します。</p>
+  </div>
+
+  <div class="card">
+    <h3>詳細な旅の記録</h3>
+    <p>現在は旅したことのみ記録できますが、将来的には旅程、宿泊、スポット詳細を登録できるようにし記憶を鮮明に保ちます。</p>
+  </div>
+
+  <div class="card">
+    <h3>ミッションとハッカソンテーマ</h3>
+    <p>「小さくなる日本」というテーマに対して、行動範囲の縮小や経済活動の縮小という多角的な意味に向き合い、心理的距離の縮小を通じて地域活性を目指します。</p>
+  </div>
+
+  <div class="card">
+    <h3>マネタイズと継続開発</h3>
+    <p>今後はプレミアム機能（詳細な旅程管理、オフラインマップ、特別な分析）やパートナー連携でマネタイズを検討します。</p>
   </div>
 </section>
 
