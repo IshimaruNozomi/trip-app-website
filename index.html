@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Travel Map - Small Japan Project</title>
+<title>Travel Map - Small Japan</title>
 
 <style>
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-family: "Helvetica Neue", sans-serif;
   }
 
   body {
@@ -58,70 +58,105 @@
   }
 
   h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 1.9rem;
+    margin-bottom: 25px;
   }
 
   p {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     color: #e5e7eb;
   }
 
   .card {
     background: #111827;
     border: 1px solid #1f2937;
-    border-radius: 12px;
-    padding: 20px;
-    margin-top: 15px;
+    padding: 22px;
+    border-radius: 14px;
+    margin-top: 18px;
   }
 
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+    gap: 18px;
   }
 
   .highlight {
     color: #38bdf8;
-    font-weight: bold;
   }
 
-  .img {
+  /* 🖼 メインビジュアル */
+  .hero-image {
     width: 100%;
-    border-radius: 16px;
-    margin-top: 30px;
+    max-width: 1100px;
+    border-radius: 18px;
+    margin: 40px auto 10px;
+    display: block;
+  }
+
+  .hero-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    color: #e5e7eb;
   }
 
   .flow {
     background: #0f172a;
-    padding: 25px;
-    border-radius: 12px;
     border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 24px;
   }
 
   .step {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
+    padding-left: 10px;
+    border-left: 2px solid #38bdf8;
   }
 
-  footer {
-    text-align: center;
-    padding: 60px 20px;
-    opacity: 0.6;
+  .screens {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 30px;
   }
+
+  .screens img {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid #1f2937;
+  }
+
+  @media (max-width: 768px) {
+    .screens {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .link-box {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+  }
+
+  a.link {
+    color: #38bdf8;
+    text-decoration: underline;
+  }
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>あなたの旅が、日本の形になる</h1>
+  <h1>あなたの旅が、日本の形を変えていく</h1>
 
   <p>
-    旅先は“選ぶもの”ではなく、“つながって生まれるもの”へ。
-    <br><br>
-    このアプリは、あなたの行動履歴から
-    <span class="highlight">「あなただけの日本地図」</span>を生成する旅記録アプリです。
+    旅先を選ぶのではなく、あなたの行動の積み重ねが“次の旅先”を決めていく。
   </p>
 
   <a class="btn" href="https://travel-app-kappa-weld.vercel.app" target="_blank">
@@ -129,121 +164,127 @@
   </a>
 </header>
 
+<!-- 🌏 メインビジュアル（ここ追加） -->
+<section style="padding-top:40px; padding-bottom:40px;">
+  <img class="hero-image" src="main.png" alt="main visual"/>
+</section>
+
 <section>
-  <h2>🌏 解決する課題：「小さくなる日本」</h2>
+  <h2>いま日本で起きていること</h2>
 
   <p>
-    現在の日本では、都市圏への人口集中により、
-    人々の行動範囲が徐々に固定化されています。
+    旅行先は自由に選べるはずなのに、
+    実際には多くの人が「行きやすい場所」や「有名な場所」に集中している。
   </p>
 
   <p>
-    結果として、旅先は“有名な場所”や“行きやすい場所”に偏り、
-    日本全体の移動範囲は実質的に縮小しています。
+    その結果、日本全体の移動は偏り、
+    地方の魅力は“知られないままの場所”として残り続けている。
   </p>
 
   <div class="card">
-    このアプリが解決したいのは「物理的距離」ではなく  
-    <span class="highlight">“心理的な移動ハードル”</span>です。
+    このアプリが扱うのは距離ではなく  
+    <span class="highlight">「行こうと思えるかどうか」</span>という心理的な壁。
   </div>
 </section>
 
 <section>
-  <h2>🧭 このアプリの本質</h2>
+  <h2>このアプリで起きる変化</h2>
 
   <div class="grid">
 
     <div class="card">
-      <h3>① 旅を記録するだけで地図が変わる</h3>
-      <p>
-        訪れた場所と満足度に応じて、
-        あなた専用の「日本地図」が変形していきます。
-      </p>
+      <h3>旅が記録になる</h3>
+      <p>行った場所と満足度から、あなた専用の日本地図が生成される。</p>
     </div>
 
     <div class="card">
-      <h3>② 日本を“心理的に小さくする”</h3>
-      <p>
-        満足した場所は距離的に近く感じるようになり、
-        行動範囲が自然に広がっていきます。
-      </p>
+      <h3>距離の感覚が変わる</h3>
+      <p>満足した場所は心理的に近くなり、行動範囲が広がる。</p>
     </div>
 
     <div class="card">
-      <h3>③ 人の履歴から旅が生まれる</h3>
-      <p>
-        AIではなく、他ユーザーのリアルな旅履歴をもとに
-        次の旅先が推薦されます。
-      </p>
+      <h3>人の履歴がヒントになる</h3>
+      <p>似た行動をしたユーザーの旅先が次の候補になる。</p>
     </div>
 
   </div>
 </section>
 
 <section>
-  <h2>🧠 レコメンドの仕組み</h2>
+  <h2>なぜこの仕組みなのか</h2>
+
+  <p>
+    一般的なレコメンドはAIが“最適解”を提示する仕組み。
+  </p>
+
+  <p>
+    このアプリはそれとは違い、
+    <span class="highlight">人間の移動の偏りそのもの</span>を価値として扱う。
+  </p>
 
   <div class="card">
-    このアプリは「あなたに最適化されたAI」ではなく、
-    <span class="highlight">“似た行動をした人の軌跡”</span>をベースにしています。
-  </div>
-
-  <div class="card">
-    つまり、「正解の旅」ではなく  
-    “他人の偶然と偏り”から新しい発見が生まれる仕組みです。
+    正解を提示するのではなく、偶然と偏りから旅が生まれる。
   </div>
 </section>
 
 <section>
-  <h2>🧭 体験の流れ</h2>
+  <h2>アプリの体験の流れ</h2>
 
   <div class="flow">
     <div class="step">① 旅先を記録する</div>
     <div class="step">② 満足度を入力する</div>
-    <div class="step">③ あなたの日本地図が変化する</div>
+    <div class="step">③ 日本の形が変化する</div>
     <div class="step">④ 類似ユーザーが見つかる</div>
     <div class="step">⑤ 次の旅先が自然に提示される</div>
   </div>
 </section>
 
 <section>
-  <h2>📸 メインビジュアル</h2>
+  <h2>実際のアプリ画面</h2>
 
-  <!-- メインテーマ画像のみ -->
-  <img class="img" src="main.png" alt="Travel Map Concept Image"/>
+  <div class="screens">
+    <img src="image1.jpg" alt="screen1"/>
+    <img src="image2.jpg" alt="screen2"/>
+    <img src="image3.jpg" alt="screen3"/>
+  </div>
 </section>
 
 <section>
-  <h2>🚀 現在と今後の展望</h2>
+  <h2>スライド（プレゼン資料）</h2>
+
+  <div class="link-box">
+    <p>ピッチ用スライドはこちらから確認できます</p>
+
+    <a class="link" href="https://canva.link/0ybs5xq2xo8bj5e" target="_blank">
+      スライドを開く
+    </a>
+  </div>
+</section>
+
+<section>
+  <h2>現在と今後</h2>
 
   <div class="grid">
 
     <div class="card">
       <h3>現在</h3>
-      <p>
-        Webアプリとして旅記録・地図生成・レコメンド機能を実装済み。
-      </p>
+      <p>Webアプリとして旅記録・地図生成・レコメンドを実装済み。</p>
     </div>
 
     <div class="card">
       <h3>今後① モバイル化</h3>
-      <p>
-        日常的に旅を記録できるようモバイルアプリへ拡張。
-      </p>
+      <p>日常的に使えるモバイルアプリへ拡張。</p>
     </div>
 
     <div class="card">
-      <h3>今後② 旅の詳細化</h3>
-      <p>
-        旅程・移動手段・宿泊・体験内容まで記録可能にする。
-      </p>
+      <h3>今後② 詳細化</h3>
+      <p>移動手段・宿泊・体験など旅の全体設計を記録可能に。</p>
     </div>
 
     <div class="card">
-      <h3>今後③ 日本の可視化進化</h3>
-      <p>
-        円ではなく「あなたの行動そのものの形」として日本を表現。
-      </p>
+      <h3>今後③ 可視化進化</h3>
+      <p>円ではなく「行動そのものの形」で日本を表現。</p>
     </div>
 
   </div>
@@ -251,7 +292,7 @@
 
 <section>
   <div class="card" style="text-align:center;">
-    <h2>🌏 最後に</h2>
+    <h2>最後に</h2>
     <p style="font-size:1.3rem;">
       地図は、誰かの記録でできている。
     </p>
@@ -261,10 +302,6 @@
     </a>
   </div>
 </section>
-
-<footer>
-  © Travel Map Project
-</footer>
 
 </body>
 </html>
